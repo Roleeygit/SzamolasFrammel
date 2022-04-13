@@ -48,7 +48,7 @@ public class MainFrame extends JFrame {
 
     calcButton = new JButton("Számít");
     calcButton.setBounds(150, 150, 100, 30);
-    
+    calcButton.addActionListener(event -> calcButton());
   }
 
 
@@ -69,5 +69,13 @@ public class MainFrame extends JFrame {
     this.setVisible(true);
 
     
+  }
+  private void calcButton() {
+    String sugarStr = radiusField.getText();
+    double sugar = Double.parseDouble(sugarStr);
+    String heightStr = radiusField.getText();
+    double height = Double.parseDouble(heightStr);
+    Double area = 1.0/3.0 * Math.pow(sugar, 2) * Math.PI * height;
+    areaField.setText(area.toString());
   }
 }
